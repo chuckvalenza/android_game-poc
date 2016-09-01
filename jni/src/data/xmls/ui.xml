@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <set path="images" />
+    <atlas>
+        <image file="player.png" />
+    </atlas>
+    <atlas>
+        <image file="joystick.png" />
+        <image file="finger.png" />
+        <image file="sky.jpg" />
+    </atlas>
+</resources>
