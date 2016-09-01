@@ -52,4 +52,4 @@ captures/
 
 # Oxygine
 libs/
-objs/
+obj/
