@@ -49,3 +49,7 @@ captures/
 *.ipr
 *~
 *.swp
+
+# Oxygine
+libs/
+objs/
