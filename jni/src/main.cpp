@@ -32,9 +32,9 @@ int gameLoop()
 
 	if (core::beginRendering()) {
 		Color clear_color(32, 32, 32, 255);
-		rect viewport(Point(0, 0), core::getDisplaySize());
+		Rect viewport(Point(0, 0), core::getDisplaySize());
 
-		getStage()->render(clearColor, viewport); // render the next stage
+		getStage()->render(clear_color, viewport); // render the next stage
 		core::swapDisplayBuffers(); // swap the current buffer out
 	}
 
@@ -93,4 +93,22 @@ int main(int argc, char* argv[])
 	run();
 	return 0;
 }
+#endif
+
+
+#ifdef OXYGINE_SDL
+
+#include "SDL_main.h"
+#include "SDL.h"
+
+extern "C" {
+	void one(void* param) { gameLoop(); }
+	void oneEmsc() { gameLoop(); }
+
+	int main(int argc, char* argv[])
+	{
+		run();
+		return 0;
+	}
+};
 #endif
