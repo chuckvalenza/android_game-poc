@@ -20,6 +20,11 @@ void Game::init()
 	// create the background
 	spSprite ground = new Sprite;
 	ground->setResAnim(res::ui.getResAnim("sky"));
+	float stage_width = getWidth();
+	float bg_width = ground->getWidth();
+	float stage_height = getHeight();
+	float bg_height = ground->getHeight();
+	ground->setScale(stage_width / bg_width, stage_height / bg_height);
 	ground->attachTo(this);
 
 	// create the player
