@@ -41,6 +41,9 @@ int gameLoop()
 	return done ? 1 : 0;
 }
 
+/**
+ * The main run function that will be executed by our main
+ */
 void run()
 {
 	ObjectBase::__startTracingLeaks(); // starts checking for leaked objects
