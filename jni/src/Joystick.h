@@ -20,7 +20,7 @@ class Joystick : public Sprite {
 		void onEvent(Event *ev);
 	public:
 		Joystick();
-		bool getDirection(Vector2& dir) const;
+		bool getDirection(Vector2& d) const;
 };
 
 #endif //OXYGINE_HW_JOYSTICK_H

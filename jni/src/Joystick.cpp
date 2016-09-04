@@ -63,8 +63,8 @@ void Joystick::onEvent(Event* ev)
 	}
 }
 
-bool Joystick::getDirection(Vector2& dir) const
+bool Joystick::getDirection(Vector2& d) const
 {
-	dir = dir;
+	d = dir;
 	return pressed;
 }
