@@ -18,7 +18,6 @@ void Player::_init()
 	weapon = new Sprite;
 	weapon->setResAnim(res::ui.getResAnim("sword"));
 	weapon->attachTo(character);
-	weapon->addTween(Sprite::TweenColor(Color::Red), 500, -1, true);
 	weapon->setVisible(false);
 }
 
