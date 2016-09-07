@@ -6,6 +6,7 @@
 #include "Game.h"
 #include "res.h"
 #include "Joystick.h"
+#include "math.h"
 
 void Player::_init()
 {
@@ -33,7 +34,25 @@ void Player::_update(const UpdateState& us)
 		view->setPosition(pos);
 
 		float angle = atan2f(dir.y, dir.x);
+
+		if (angle >= -3 && angle <= 1.5) {
+			angle += M_PI / 2;
+		} else {
+			angle -= 1.5f * M_PI;
+		}
+
 		view->setRotation(angle);
-		weapon->setVisible(true);
+	}
+
+	if (game->look->getDirection(dir)) {
+		float angle = atan2f(dir.y, dir.x);
+
+		if (angle >= -3 && angle <= 1.5) {
+			angle += M_PI / 2;
+		} else {
+			angle -= 1.5f * M_PI;
+		}
+
+		view->setRotation(angle);
 	}
 }
