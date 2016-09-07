@@ -34,7 +34,12 @@ void Game::init()
 	// create joystick
 	move = new Joystick;
 	move->attachTo(this);
-	move->setY(getHeight() - move->getHeight());
+	move->setY(getHeight() * 0.2f);
+
+	look = new Joystick;
+	look->attachTo(this);
+	look->setY(getHeight() * 0.2f);
+	look->setX(getWidth() - look->getWidth());
 }
 
 void Game::doUpdate(const UpdateState& us)

@@ -20,6 +20,7 @@ class Game : public Actor {
 
 		spPlayer player;
 		spJoystick move;
+		spJoystick look;
 	public:
 		Game();
 		void init();
