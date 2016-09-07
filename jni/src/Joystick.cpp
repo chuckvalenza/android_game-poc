@@ -20,7 +20,7 @@ Joystick::Joystick() : pressed(false), dir(0, 0)
 	finger = new Sprite;
 	finger->setResAnim(res::ui.getResAnim("finger"));
 	finger->attachTo(this);
-	finger->setVisible("false");
+	finger->setVisible(false);
 	finger->setAnchor(Vector2(0.5f, 0.5f));
 	finger->setTouchEnabled(false);
 }
