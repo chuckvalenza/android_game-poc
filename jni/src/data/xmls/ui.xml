@@ -3,10 +3,11 @@
     <set path="images" />
     <atlas>
         <image file="player.png" />
+        <image file="sword.png" />
     </atlas>
     <atlas>
         <image file="joystick.png" />
         <image file="finger.png" />
-        <image file="sky.jpg" />
+        <image file="ground.png" />
     </atlas>
 </resources>
