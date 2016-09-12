@@ -53,3 +53,6 @@ captures/
 # Oxygine
 libs/
 obj/
+
+# image files
+*.xcf
