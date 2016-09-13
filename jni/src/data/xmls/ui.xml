@@ -2,7 +2,7 @@
 <resources>
     <set path="images" />
     <atlas>
-        <image file="player.png" />
+        <image file="player.png" cols="5" />
         <image file="sword.png" />
     </atlas>
     <atlas>
