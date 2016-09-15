@@ -3,7 +3,7 @@
     <set path="images" />
     <atlas>
         <image file="player.png" cols="5" />
-        <image file="sword.png" />
+        <image file="sword.png" cols="5" />
     </atlas>
     <atlas>
         <image file="joystick.png" />

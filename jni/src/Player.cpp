@@ -16,12 +16,13 @@ void Player::_init()
 	character = new Sprite;
 	character->setResAnim(res::ui.getResAnim("player"));
 	character->attachTo(view);
-	character->setAnchor(0.5f, 0.5f);
+	character->setAnchor(0.5f, 0.65f);
 
 	weapon = new Sprite;
 	weapon->setResAnim(res::ui.getResAnim("sword"));
 	weapon->attachTo(character);
-	weapon->setVisible(false);
+
+	changeAnim("stand", 1);
 }
 
 void Player::move(timeMS dt)
@@ -68,8 +69,10 @@ void Player::changeAnim(std::string action, int ms)
 {
 	if (action == "stand") {
 		character->addTween(TweenAnim(res::ui.getResAnim("player"), 0, 0), ms);
+		weapon->addTween(TweenAnim(res::ui.getResAnim("sword"), 0, 0), ms);
 	} else if (action, "swing") {
 		character->addTween(TweenAnim(res::ui.getResAnim("player"), 1, 4), ms);
+		weapon->addTween(TweenAnim(res::ui.getResAnim("sword"), 1, 4), ms);
 	}
 }
 
@@ -80,9 +83,7 @@ void Player::swingAnimation(int ms)
 		(system_clock::now().time_since_epoch());
 
 	if (cur_time - atk_anim_timer > milliseconds(ms)) {
-		character->setResAnim(res::ui.getResAnim("swing"));
 		changeAnim("swing", ms);
-		//character->addTween(TweenAnim(res::ui.getResAnim("player"), 1, 4), ms);
 		atk_anim_timer = cur_time;
 	}
 }
@@ -105,14 +106,11 @@ void Player::attack()
 		swingAnimation(300);
 	} else {
 		changeAnim("stand", 1);
-		//character->addTween(TweenAnim(res::ui.getResAnim("player"), 0, 0), 1);
 	}
 }
 
 void Player::_update(const UpdateState& us)
 {
-	weapon->setVisible(false);
-
 	move(us.dt);
 	attack();
 }
