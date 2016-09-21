@@ -14,15 +14,22 @@ void Player::_init()
 
 	view->setPosition(game->getSize() / 2);
 	character = new Sprite;
-	character->setResAnim(res::ui.getResAnim("player"));
+	torso = "player";
+	character->setResAnim(res::ui.getResAnim(torso));
 	character->attachTo(view);
-	character->setAnchor(0.5f, 0.65f);
+	character->setAnchor(0.5f, 0.62f);
 
 	weapon = new Sprite;
-	weapon->setResAnim(res::ui.getResAnim("sword"));
+	rh_weapon = "sword";
+	weapon->setResAnim(res::ui.getResAnim(rh_weapon));
 	weapon->attachTo(character);
 
 	changeAnim("stand", 1);
+}
+
+void Player::setRHWeapon(std::string weap)
+{
+	rh_weapon = weap;
 }
 
 void Player::move(timeMS dt)
@@ -68,11 +75,11 @@ void Player::move(timeMS dt)
 void Player::changeAnim(std::string action, int ms)
 {
 	if (action == "stand") {
-		character->addTween(TweenAnim(res::ui.getResAnim("player"), 0, 0), ms);
-		weapon->addTween(TweenAnim(res::ui.getResAnim("sword"), 0, 0), ms);
+		character->addTween(TweenAnim(res::ui.getResAnim(torso), 0, 0), ms);
+		weapon->addTween(TweenAnim(res::ui.getResAnim(rh_weapon), 0, 0), ms);
 	} else if (action, "swing") {
-		character->addTween(TweenAnim(res::ui.getResAnim("player"), 1, 4), ms);
-		weapon->addTween(TweenAnim(res::ui.getResAnim("sword"), 1, 4), ms);
+		character->addTween(TweenAnim(res::ui.getResAnim(torso), 1, 4), ms);
+		weapon->addTween(TweenAnim(res::ui.getResAnim(rh_weapon), 1, 4), ms);
 	}
 }
 

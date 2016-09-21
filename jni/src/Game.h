@@ -11,6 +11,7 @@ using namespace oxygine;
 
 DECLARE_SMART(Player, spPlayer);
 DECLARE_SMART(Joystick, spJoystick);
+DECLARE_SMART(EquipmentButton, spEquipmentButton);
 DECLARE_SMART(Game, spGame);
 
 class Game : public Actor {
@@ -21,8 +22,11 @@ class Game : public Actor {
 		spPlayer player;
 		spJoystick move;
 		spJoystick look;
+		spEquipmentButton slot1;
+		spEquipmentButton slot2;
 	public:
 		Game();
+		void setPlayerRHWeapon(std::string weap);
 		void init();
 };
 

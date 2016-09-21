@@ -13,6 +13,11 @@ DECLARE_SMART(Player, spPlayer);
 class Player : public Unit {
 	private:
 		std::chrono::milliseconds atk_anim_timer;
+		std::string torso;
+		std::string rh_weapon;
+		std::string lh_weapon;
+		std::string legs;
+
 		void move(timeMS dt);
 		void attack();
 		void swingAnimation(int time_ms);
@@ -24,6 +29,7 @@ class Player : public Unit {
 		spSprite character;
 		spSprite weapon;
 	public:
+		void setRHWeapon(std::string weap);
 };
 
 #endif //OXYGINE_HW_PLAYER_H

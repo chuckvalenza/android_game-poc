@@ -7,7 +7,7 @@ LOCAL_MODULE := main
 SDK_ROOT := /home/cvalenza/code/libraries
 
 LOCAL_SRC_FILES := /home/cvalenza/code/libraries/SDL/src/main/android/SDL_android_main.c
-LOCAL_SRC_FILES += main.cpp example.cpp Game.cpp Joystick.cpp Player.cpp res.cpp Unit.cpp
+LOCAL_SRC_FILES += main.cpp example.cpp Game.cpp Joystick.cpp Player.cpp EquipmentButton.cpp res.cpp Unit.cpp
 
 
 LOCAL_STATIC_LIBRARIES := oxygine-framework_static

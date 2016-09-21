@@ -4,6 +4,7 @@
 
 #include "Game.h"
 #include "Joystick.h"
+#include "EquipmentButton.h"
 #include "Player.h"
 #include "res.h"
 
@@ -30,6 +31,7 @@ void Game::init()
 	// create the player
 	player = new Player;
 	player->init(this);
+	player->setRHWeapon("sword");
 
 	// create joystick
 	move = new Joystick;
@@ -40,6 +42,25 @@ void Game::init()
 	look->attachTo(this);
 	look->setY(getHeight() * 0.2f);
 	look->setX(getWidth() - look->getWidth());
+
+	slot1 = new EquipmentButton;
+	slot1->init(this);
+	slot1->setEquipment("sword");
+	slot1->setEquipmentMenu("sword_equipmenu");
+	slot1->setY(getHeight() - slot1->getHeight());
+	slot1->setX(getWidth() / 2 - slot1->getWidth() * 1.5);
+
+	slot2 = new EquipmentButton;
+	slot2->init(this);
+	slot2->setEquipment("alt_sword");
+	slot2->setEquipmentMenu("alt_sword_equipmenu");
+	slot2->setY(getHeight() - slot2->getHeight());
+	slot2->setX(getWidth() / 2);
+}
+
+void Game::setPlayerRHWeapon(std::string weap)
+{
+	player->setRHWeapon(weap);
 }
 
 void Game::doUpdate(const UpdateState& us)
