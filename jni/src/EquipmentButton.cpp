@@ -9,6 +9,8 @@ void EquipmentButton::_init()
 {
 	view->setPosition(game->getSize() / 2);
 
+	equipment = "blank";
+
 	button = new Sprite;
 	button->setResAnim(res::ui.getResAnim("equip_quickslot"));
 	button->setAnchor(0.0f, 0.5f);
@@ -17,7 +19,7 @@ void EquipmentButton::_init()
 	button->addEventListener(TouchEvent::TOUCH_UP, CLOSURE(this, &EquipmentButton::onEvent));
 
 	equip_sprite = new Sprite;
-	equip_sprite_str = "sword_equipmenu";
+	equip_sprite_str = "blank";
 	equip_sprite->setResAnim(res::ui.getResAnim(equip_sprite_str));
 	equip_sprite->setAnchor(-0.27f, 0.5f);
 	equip_sprite->attachTo(view);

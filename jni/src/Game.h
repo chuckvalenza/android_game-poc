@@ -24,6 +24,7 @@ class Game : public Actor {
 		spJoystick look;
 		spEquipmentButton slot1;
 		spEquipmentButton slot2;
+		spEquipmentButton slot3;
 	public:
 		Game();
 		void setPlayerRHWeapon(std::string weap);

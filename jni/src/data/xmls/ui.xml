@@ -9,6 +9,7 @@
     <atlas>
         <image file="joystick.png" />
         <image file="equip_quickslot.png" />
+        <image file="blank.png" />
         <image file="sword_equipmenu.png" />
         <image file="alt_sword_equipmenu.png" />
         <image file="finger.png" />

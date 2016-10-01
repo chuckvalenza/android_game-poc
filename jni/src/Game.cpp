@@ -31,7 +31,6 @@ void Game::init()
 	// create the player
 	player = new Player;
 	player->init(this);
-	player->setRHWeapon("sword");
 
 	// create joystick
 	move = new Joystick;
@@ -48,14 +47,19 @@ void Game::init()
 	slot1->setEquipment("sword");
 	slot1->setEquipmentMenu("sword_equipmenu");
 	slot1->setY(getHeight() - slot1->getHeight());
-	slot1->setX(getWidth() / 2 - slot1->getWidth() * 1.5);
+	slot1->setX(getWidth() / 2 - slot1->getWidth() * 1.5 - slot1->getWidth() * 0.75);
 
 	slot2 = new EquipmentButton;
 	slot2->init(this);
 	slot2->setEquipment("alt_sword");
 	slot2->setEquipmentMenu("alt_sword_equipmenu");
 	slot2->setY(getHeight() - slot2->getHeight());
-	slot2->setX(getWidth() / 2);
+	slot2->setX(getWidth() / 2 - slot2->getWidth() * 0.75);
+
+	slot3 = new EquipmentButton;
+	slot3->init(this);
+	slot3->setY(getHeight() - slot3->getHeight());
+	slot3->setX(getWidth() / 2 + slot3->getWidth() * 0.75);
 }
 
 void Game::setPlayerRHWeapon(std::string weap)
