@@ -8,6 +8,7 @@ ToDo List:
 - [x] Equipment quick select bar
 - [x] Two weapons
 - [x] Change weapons with quickselect
+- [ ] Global scale to different DPI values based on screen size (overridable in pause menu)
 - [ ] Different character animations based on weapon equipped
 - [ ] Sound
 - [ ] Enemy AI class
@@ -20,3 +21,7 @@ ToDo List:
 - [ ] Start menu
 - [ ] Loading screen splash
 - [ ] Back button behaviour
+
+For personal reference:
+
+python ~/code/libraries/oxygine-framework/tools/gen_template.py MyProject -t android -d code/ProjectDir
